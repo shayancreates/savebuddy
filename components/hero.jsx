@@ -8,24 +8,6 @@ import Link from "next/link";
 const HeroSection = () => {
   const imageRef = useRef(null);
 
-  useEffect(() => {
-    const imageElement = imageRef.current;
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
-
-      if (scrollPosition > scrollThreshold) {
-        imageElement.classList.add("scrolled");
-      } else {
-        imageElement.classList.remove("scrolled");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section className="pt-40 pb-20 px-4">
       <div className="container mx-auto text-center">
